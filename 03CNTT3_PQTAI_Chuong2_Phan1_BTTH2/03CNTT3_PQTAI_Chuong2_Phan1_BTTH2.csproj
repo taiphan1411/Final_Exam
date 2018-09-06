@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{44FC5695-7222-4078-8E36-4027183BFC70}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_03CNTT3_PQTAI_Chuong2_Phan1_BTTH2</RootNamespace>
+    <AssemblyName>03CNTT3_PQTAI_Chuong2_Phan1_BTTH2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Admin\QuanLyDauSachController.cs" />
+    <Compile Include="Controllers\Admin\QuanLyMuonSachController.cs" />
+    <Compile Include="Controllers\Admin\QuanLyTacGiaController.cs" />
+    <Compile Include="Controllers\Admin\ThemMoiDauSachController.cs" />
+    <Compile Include="Controllers\Admin\ThemMoiTacGiaController.cs" />
+    <Compile Include="Controllers\Library\AdminController.cs" />
+    <Compile Include="Controllers\Library\DangKyController.cs" />
+    <Compile Include="Controllers\Library\DangNhapController.cs" />
+    <Compile Include="Controllers\Library\KhoSachController.cs" />
+    <Compile Include="Controllers\Library\LienHeController.cs" />
+    <Compile Include="Controllers\Library\QuanLyCaNhanController.cs" />
+    <Compile Include="Controllers\Library\TacGiaController.cs" />
+    <Compile Include="Controllers\Library\TimKiemController.cs" />
+    <Compile Include="Controllers\Library\TrangChuController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BUS\ChuDe_BUS.cs" />
+    <Compile Include="Models\BUS\DauSach_BUS.cs" />
+    <Compile Include="Models\BUS\MaHoaThongTin_BUS.cs" />
+    <Compile Include="Models\BUS\NguoiDung_BUS.cs" />
+    <Compile Include="Models\BUS\Sach_BUS.cs" />
+    <Compile Include="Models\BUS\XuLyAnh.cs" />
+    <Compile Include="Models\DAO\ChuDe_DAO.cs" />
+    <Compile Include="Models\DAO\DauSach_DAO.cs" />
+    <Compile Include="Models\DAO\NguoiDung_DAO.cs" />
+    <Compile Include="Models\DAO\Sach_DAO.cs" />
+    <Compile Include="Models\DAO\SQLDataAccess.cs" />
+    <Compile Include="Models\DTO\ChuDe_DTO.cs" />
+    <Compile Include="Models\DTO\DauSachFull_DTO.cs" />
+    <Compile Include="Models\DTO\DauSach_DTO.cs" />
+    <Compile Include="Models\DTO\NguoiDung_DTO.cs" />
+    <Compile Include="Models\DTO\Sach_DTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\AdminTemplate\index.html" />
+    <Content Include="Content\AdminTemplate\Admin.css" />
+    <Content Include="Content\AdminTemplate\Admin.js" />
+    <Content Include="Content\AdminTemplate\style\css\hack.css" />
+    <Content Include="Content\AdminTemplate\style\css\ie6.css" />
+    <Content Include="Content\AdminTemplate\style\css\ie7.css" />
+    <Content Include="Content\AdminTemplate\style\css\jNice.css" />
+    <Content Include="Content\AdminTemplate\style\css\layout.css" />
+    <Content Include="Content\AdminTemplate\style\css\reset.css" />
+    <Content Include="Content\AdminTemplate\style\css\transdmin.css" />
+    <Content Include="Content\AdminTemplate\style\img\btn_left.gif" />
+    <Content Include="Content\AdminTemplate\style\img\btn_right.gif" />
+    <Content Include="Content\AdminTemplate\style\img\button-submit.gif" />
+    <Content Include="Content\AdminTemplate\style\img\content.gif" />
+    <Content Include="Content\AdminTemplate\style\img\input-shaddow-hover.gif" />
+    <Content Include="Content\AdminTemplate\style\img\input-shaddow.gif" />
+    <Content Include="Content\AdminTemplate\style\img\left-menu-bg.gif" />
+    <Content Include="Content\AdminTemplate\style\img\select_left.gif" />
+    <Content Include="Content\AdminTemplate\style\img\select_right.gif" />
+    <Content Include="Content\AdminTemplate\style\img\top-menu-bg.gif" />
+    <Content Include="Content\AdminTemplate\style\img\top-menu-item-bg.gif" />
+    <Content Include="Content\AdminTemplate\style\img\transdmin-light.gif" />
+    <Content Include="Content\AdminTemplate\style\js\jNice.js" />
+    <Content Include="Content\AdminTemplate\style\js\jquery.js" />
+    <Content Include="Content\bookimages\1.jpg" />
+    <Content Include="Content\bookimages\2.jpg" />
+    <Content Include="Content\bookimages\3.jpg" />
+    <Content Include="Content\bookimages\4.jpg" />
+    <Content Include="Content\LibraryK29Template\Library.js" />
+    <Content Include="Content\LibraryK29Template\Library.css" />
+    <Content Include="Content\LibraryK29Template\images\cart.png" />
+    <Content Include="Content\LibraryK29Template\images\favicon.ico" />
+    <Content Include="Content\LibraryK29Template\images\image_02.jpg" />
+    <Content Include="Content\LibraryK29Template\images\image_03.jpg" />
+    <Content Include="Content\LibraryK29Template\images\image_04.jpg" />
+    <Content Include="Content\LibraryK29Template\images\image_05.jpg" />
+    <Content Include="Content\LibraryK29Template\images\templatemo_button.png" />
+    <Content Include="Content\LibraryK29Template\images\templatemo_button_hover.png" />
+    <Content Include="Content\LibraryK29Template\images\templatemo_content.jpg" />
+    <Content Include="Content\LibraryK29Template\images\templatemo_content_bottom.jpg" />
+    <Content Include="Content\LibraryK29Template\images\templatemo_header.jpg" />
+    <Content Include="Content\LibraryK29Template\images\templatemo_header_bg.png" />
+    <Content Include="Content\LibraryK29Template\images\templatemo_list.png" />
+    <Content Include="Content\LibraryK29Template\images\templatemo_logo.png" />
+    <Content Include="Content\LibraryK29Template\images\templatemo_menu_hover.png" />
+    <Content Include="Content\LibraryK29Template\images\templatemo_search.png" />
+    <Content Include="Content\LibraryK29Template\index.html" />
+    <Content Include="Content\LibraryK29Template\templatemo_style.css" />
+    <Content Include="Content\Library\NiceEditor\demos\demo01.html" />
+    <Content Include="Content\Library\NiceEditor\demos\demo02.html" />
+    <Content Include="Content\Library\NiceEditor\demos\demo03.html" />
+    <Content Include="Content\Library\NiceEditor\demos\demo04.html" />
+    <Content Include="Content\Library\NiceEditor\demos\demo05.html" />
+    <Content Include="Content\Library\NiceEditor\nicEdit.js" />
+    <Content Include="Content\Library\NiceEditor\nicEditorIcons.gif" />
+    <Content Include="Content\upload\authorimage\author00001.jpg" />
+    <Content Include="Content\upload\authorimage\author00002.jpg" />
+    <Content Include="Content\upload\authorimage\author00003.jpg" />
+    <Content Include="Content\upload\authorimage\author00004.jpg" />
+    <Content Include="Content\upload\authorimage\author00005.jpg" />
+    <Content Include="Content\upload\authorimage\author00006.jpg" />
+    <Content Include="Content\upload\authorimage\author00007.jpg" />
+    <Content Include="Content\upload\authorimage\author00008.jpg" />
+    <Content Include="Content\upload\authorimage\author00009.jpg" />
+    <Content Include="Content\upload\authorimage\author00010.jpg" />
+    <Content Include="Content\upload\authorimage\noimage.jpg" />
+    <Content Include="Content\upload\authorimage\thumbnail\author00001.jpg" />
+    <Content Include="Content\upload\authorimage\thumbnail\author00002.jpg" />
+    <Content Include="Content\upload\authorimage\thumbnail\author00003.jpg" />
+    <Content Include="Content\upload\authorimage\thumbnail\author00004.jpg" />
+    <Content Include="Content\upload\authorimage\thumbnail\author00005.jpg" />
+    <Content Include="Content\upload\authorimage\thumbnail\author00006.jpg" />
+    <Content Include="Content\upload\authorimage\thumbnail\author00007.jpg" />
+    <Content Include="Content\upload\authorimage\thumbnail\author00008.jpg" />
+    <Content Include="Content\upload\authorimage\thumbnail\author00009.jpg" />
+    <Content Include="Content\upload\authorimage\thumbnail\author00010.jpg" />
+    <Content Include="Content\upload\authorimage\thumbnail\noimage.jpg" />
+    <Content Include="Content\upload\avatar\noimage.jpg" />
+    <Content Include="Content\upload\avatar\thumbnail\noimage.jpg" />
+    <Content Include="Content\upload\bookimage\book00001.jpg" />
+    <Content Include="Content\upload\bookimage\book00002.jpg" />
+    <Content Include="Content\upload\bookimage\book00003.jpg" />
+    <Content Include="Content\upload\bookimage\book00004.jpg" />
+    <Content Include="Content\upload\bookimage\book00005.jpg" />
+    <Content Include="Content\upload\bookimage\book00006.jpg" />
+    <Content Include="Content\upload\bookimage\book00007.jpg" />
+    <Content Include="Content\upload\bookimage\book00008.jpg" />
+    <Content Include="Content\upload\bookimage\book00009.jpg" />
+    <Content Include="Content\upload\bookimage\book00010.jpg" />
+    <Content Include="Content\upload\bookimage\book00011.jpg" />
+    <Content Include="Content\upload\bookimage\book00012.jpg" />
+    <Content Include="Content\upload\bookimage\book00013.jpg" />
+    <Content Include="Content\upload\bookimage\book00014.jpg" />
+    <Content Include="Content\upload\bookimage\book00015.jpg" />
+    <Content Include="Content\upload\bookimage\book00016.jpg" />
+    <Content Include="Content\upload\bookimage\book00017.jpg" />
+    <Content Include="Content\upload\bookimage\book00018.jpg" />
+    <Content Include="Content\upload\bookimage\book00019.jpg" />
+    <Content Include="Content\upload\bookimage\book00020.jpg" />
+    <Content Include="Content\upload\bookimage\book00021.jpg" />
+    <Content Include="Content\upload\bookimage\book00022.jpg" />
+    <Content Include="Content\upload\bookimage\book00023.jpg" />
+    <Content Include="Content\upload\bookimage\book00024.jpg" />
+    <Content Include="Content\upload\bookimage\book00025.jpg" />
+    <Content Include="Content\upload\bookimage\book00026.jpg" />
+    <Content Include="Content\upload\bookimage\book00027.jpg" />
+    <Content Include="Content\upload\bookimage\book00028.jpg" />
+    <Content Include="Content\upload\bookimage\book00029.jpg" />
+    <Content Include="Content\upload\bookimage\book00030.jpg" />
+    <Content Include="Content\upload\bookimage\book00031.jpg" />
+    <Content Include="Content\upload\bookimage\book00032.jpg" />
+    <Content Include="Content\upload\bookimage\book00033.jpg" />
+    <Content Include="Content\upload\bookimage\book00034.jpg" />
+    <Content Include="Content\upload\bookimage\book00035.jpg" />
+    <Content Include="Content\upload\bookimage\book00036.jpg" />
+    <Content Include="Content\upload\bookimage\book00037.jpg" />
+    <Content Include="Content\upload\bookimage\book00038.jpg" />
+    <Content Include="Content\upload\bookimage\book00039.jpg" />
+    <Content Include="Content\upload\bookimage\book00040.jpg" />
+    <Content Include="Content\upload\bookimage\book00041.jpg" />
+    <Content Include="Content\upload\bookimage\book00042.jpg" />
+    <Content Include="Content\upload\bookimage\book00043.jpg" />
+    <Content Include="Content\upload\bookimage\book00044.jpg" />
+    <Content Include="Content\upload\bookimage\book00045.jpg" />
+    <Content Include="Content\upload\bookimage\book00046.jpg" />
+    <Content Include="Content\upload\bookimage\book00047.jpg" />
+    <Content Include="Content\upload\bookimage\book00048.jpg" />
+    <Content Include="Content\upload\bookimage\book00049.jpg" />
+    <Content Include="Content\upload\bookimage\book00050.jpg" />
+    <Content Include="Content\upload\bookimage\book00051.jpg" />
+    <Content Include="Content\upload\bookimage\book00052.jpg" />
+    <Content Include="Content\upload\bookimage\book00053.jpg" />
+    <Content Include="Content\upload\bookimage\book00054.jpg" />
+    <Content Include="Content\upload\bookimage\book00055.jpg" />
+    <Content Include="Content\upload\bookimage\book00056.jpg" />
+    <Content Include="Content\upload\bookimage\book00057.jpg" />
+    <Content Include="Content\upload\bookimage\book00058.jpg" />
+    <Content Include="Content\upload\bookimage\book00059.jpg" />
+    <Content Include="Content\upload\bookimage\book00060.jpg" />
+    <Content Include="Content\upload\bookimage\book00061.jpg" />
+    <Content Include="Content\upload\bookimage\book00062.jpg" />
+    <Content Include="Content\upload\bookimage\book00063.jpg" />
+    <Content Include="Content\upload\bookimage\book00064.jpg" />
+    <Content Include="Content\upload\bookimage\book00065.jpg" />
+    <Content Include="Content\upload\bookimage\book00066.jpg" />
+    <Content Include="Content\upload\bookimage\book00067.jpg" />
+    <Content Include="Content\upload\bookimage\book00068.jpg" />
+    <Content Include="Content\upload\bookimage\book00069.jpg" />
+    <Content Include="Content\upload\bookimage\book00070.jpg" />
+    <Content Include="Content\upload\bookimage\book00071.jpg" />
+    <Content Include="Content\upload\bookimage\book00072.jpg" />
+    <Content Include="Content\upload\bookimage\book00073.jpg" />
+    <Content Include="Content\upload\bookimage\book00074.jpg" />
+    <Content Include="Content\upload\bookimage\book00075.jpg" />
+    <Content Include="Content\upload\bookimage\book00076.jpg" />
+    <Content Include="Content\upload\bookimage\book00077.jpg" />
+    <Content Include="Content\upload\bookimage\book00078.jpg" />
+    <Content Include="Content\upload\bookimage\book00079.jpg" />
+    <Content Include="Content\upload\bookimage\book00080.jpg" />
+    <Content Include="Content\upload\bookimage\book00081.jpg" />
+    <Content Include="Content\upload\bookimage\book00082.jpg" />
+    <Content Include="Content\upload\bookimage\book00083.jpg" />
+    <Content Include="Content\upload\bookimage\book00084.jpg" />
+    <Content Include="Content\upload\bookimage\book00085.jpg" />
+    <Content Include="Content\upload\bookimage\book00086.jpg" />
+    <Content Include="Content\upload\bookimage\book00087.jpg" />
+    <Content Include="Content\upload\bookimage\book00088.jpg" />
+    <Content Include="Content\upload\bookimage\book00089.jpg" />
+    <Content Include="Content\upload\bookimage\book00090.jpg" />
+    <Content Include="Content\upload\bookimage\book00091.jpg" />
+    <Content Include="Content\upload\bookimage\book00092.jpg" />
+    <Content Include="Content\upload\bookimage\book00093.jpg" />
+    <Content Include="Content\upload\bookimage\book00094.jpg" />
+    <Content Include="Content\upload\bookimage\book00095.jpg" />
+    <Content Include="Content\upload\bookimage\book00096.jpg" />
+    <Content Include="Content\upload\bookimage\book00097.jpg" />
+    <Content Include="Content\upload\bookimage\book00098.jpg" />
+    <Content Include="Content\upload\bookimage\book00099.jpg" />
+    <Content Include="Content\upload\bookimage\book00100.jpg" />
+    <Content Include="Content\upload\bookimage\noimage.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00001.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00002.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00003.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00004.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00005.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00006.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00007.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00008.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00009.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00010.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00011.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00012.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00013.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00014.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00015.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00016.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00017.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00018.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00019.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00020.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00021.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00022.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00023.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00024.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00025.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00026.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00027.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00028.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00029.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00030.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00031.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00032.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00033.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00034.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00035.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00036.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00037.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00038.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00039.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00040.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00041.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00042.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00043.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00044.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00045.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00046.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00047.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00048.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00049.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00050.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00051.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00052.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00053.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00054.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00055.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00056.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00057.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00058.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00059.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00060.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00061.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00062.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00063.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00064.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00065.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00066.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00067.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00068.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00069.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00070.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00071.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00072.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00073.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00074.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00075.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00076.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00077.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00078.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00079.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00080.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00081.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00082.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00083.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00084.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00085.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00086.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00087.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00088.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00089.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00090.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00091.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00092.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00093.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00094.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00095.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00096.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00097.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00098.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00099.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\book00100.jpg" />
+    <Content Include="Content\upload\bookimage\thumbnail\noimage.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\LibraryK29Template\images\logo.psd" />
+    <Content Include="Content\upload\bookpdf\book00001.pdf" />
+    <Content Include="Content\upload\bookpdf\book00002.pdf" />
+    <Content Include="Content\upload\bookpdf\book00003.pdf" />
+    <Content Include="Content\upload\bookpdf\book00004.pdf" />
+    <Content Include="Content\upload\bookpdf\book00005.pdf" />
+    <Content Include="Content\upload\bookpdf\book00006.pdf" />
+    <Content Include="Content\upload\bookpdf\book00007.pdf" />
+    <Content Include="Content\upload\bookpdf\book00008.pdf" />
+    <Content Include="Content\upload\bookpdf\book00009.pdf" />
+    <Content Include="Content\upload\bookpdf\book00010.pdf" />
+    <Content Include="Content\upload\bookpdf\book00011.pdf" />
+    <Content Include="Content\upload\bookpdf\book00012.pdf" />
+    <Content Include="Content\upload\bookpdf\book00013.pdf" />
+    <Content Include="Content\upload\bookpdf\book00014.pdf" />
+    <Content Include="Content\upload\bookpdf\book00015.pdf" />
+    <Content Include="Content\upload\bookpdf\book00016.pdf" />
+    <Content Include="Content\upload\bookpdf\book00017.pdf" />
+    <Content Include="Content\upload\bookpdf\book00018.pdf" />
+    <Content Include="Content\upload\bookpdf\book00019.pdf" />
+    <Content Include="Content\upload\bookpdf\book00020.pdf" />
+    <Content Include="Content\upload\bookpdf\book00021.pdf" />
+    <Content Include="Content\upload\bookpdf\book00022.pdf" />
+    <Content Include="Content\upload\bookpdf\book00023.pdf" />
+    <Content Include="Content\upload\bookpdf\book00024.pdf" />
+    <Content Include="Content\upload\bookpdf\book00025.pdf" />
+    <Content Include="Content\upload\bookpdf\book00026.pdf" />
+    <Content Include="Content\upload\bookpdf\book00027.pdf" />
+    <Content Include="Content\upload\bookpdf\book00028.pdf" />
+    <Content Include="Content\upload\bookpdf\book00029.pdf" />
+    <Content Include="Content\upload\bookpdf\book00030.pdf" />
+    <Content Include="Content\upload\bookpdf\book00031.pdf" />
+    <Content Include="Content\upload\bookpdf\book00032.pdf" />
+    <Content Include="Content\upload\bookpdf\book00033.pdf" />
+    <Content Include="Content\upload\bookpdf\book00034.pdf" />
+    <Content Include="Content\upload\bookpdf\book00035.pdf" />
+    <Content Include="Content\upload\bookpdf\book00036.pdf" />
+    <Content Include="Content\upload\bookpdf\book00037.pdf" />
+    <Content Include="Content\upload\bookpdf\book00038.pdf" />
+    <Content Include="Content\upload\bookpdf\book00039.pdf" />
+    <Content Include="Content\upload\bookpdf\book00040.pdf" />
+    <Content Include="Content\upload\bookpdf\book00041.pdf" />
+    <Content Include="Content\upload\bookpdf\book00042.pdf" />
+    <Content Include="Content\upload\bookpdf\book00043.pdf" />
+    <Content Include="Content\upload\bookpdf\book00044.pdf" />
+    <Content Include="Content\upload\bookpdf\book00045.pdf" />
+    <Content Include="Content\upload\bookpdf\book00046.pdf" />
+    <Content Include="Content\upload\bookpdf\book00047.pdf" />
+    <Content Include="Content\upload\bookpdf\book00048.pdf" />
+    <Content Include="Content\upload\bookpdf\book00049.pdf" />
+    <Content Include="Content\upload\bookpdf\book00050.pdf" />
+    <Content Include="Content\upload\bookpdf\book00051.pdf" />
+    <Content Include="Content\upload\bookpdf\book00052.pdf" />
+    <Content Include="Content\upload\bookpdf\book00053.pdf" />
+    <Content Include="Content\upload\bookpdf\book00054.pdf" />
+    <Content Include="Content\upload\bookpdf\book00055.pdf" />
+    <Content Include="Content\upload\bookpdf\book00056.pdf" />
+    <Content Include="Content\upload\bookpdf\book00057.pdf" />
+    <Content Include="Content\upload\bookpdf\book00058.pdf" />
+    <Content Include="Content\upload\bookpdf\book00059.pdf" />
+    <Content Include="Content\upload\bookpdf\book00060.pdf" />
+    <Content Include="Content\upload\bookpdf\book00061.pdf" />
+    <Content Include="Content\upload\bookpdf\book00062.pdf" />
+    <Content Include="Content\upload\bookpdf\book00063.pdf" />
+    <Content Include="Content\upload\bookpdf\book00064.pdf" />
+    <Content Include="Content\upload\bookpdf\book00065.pdf" />
+    <Content Include="Content\upload\bookpdf\book00066.pdf" />
+    <Content Include="Content\upload\bookpdf\book00067.pdf" />
+    <Content Include="Content\upload\bookpdf\book00068.pdf" />
+    <Content Include="Content\upload\bookpdf\book00069.pdf" />
+    <Content Include="Content\upload\bookpdf\book00070.pdf" />
+    <Content Include="Content\upload\bookpdf\book00071.pdf" />
+    <Content Include="Content\upload\bookpdf\book00072.pdf" />
+    <Content Include="Content\upload\bookpdf\book00073.pdf" />
+    <Content Include="Content\upload\bookpdf\book00074.pdf" />
+    <Content Include="Content\upload\bookpdf\book00075.pdf" />
+    <Content Include="Content\upload\bookpdf\book00076.pdf" />
+    <Content Include="Content\upload\bookpdf\book00077.pdf" />
+    <Content Include="Content\upload\bookpdf\book00078.pdf" />
+    <Content Include="Content\upload\bookpdf\book00079.pdf" />
+    <Content Include="Content\upload\bookpdf\book00080.pdf" />
+    <Content Include="Content\upload\bookpdf\book00081.pdf" />
+    <Content Include="Content\upload\bookpdf\book00082.pdf" />
+    <Content Include="Content\upload\bookpdf\book00083.pdf" />
+    <Content Include="Content\upload\bookpdf\book00084.pdf" />
+    <Content Include="Content\upload\bookpdf\book00085.pdf" />
+    <Content Include="Content\upload\bookpdf\book00086.pdf" />
+    <Content Include="Content\upload\bookpdf\book00087.pdf" />
+    <Content Include="Content\upload\bookpdf\book00088.pdf" />
+    <Content Include="Content\upload\bookpdf\book00089.pdf" />
+    <Content Include="Content\upload\bookpdf\book00090.pdf" />
+    <Content Include="Content\upload\bookpdf\book00091.pdf" />
+    <Content Include="Content\upload\bookpdf\book00092.pdf" />
+    <Content Include="Content\upload\bookpdf\book00093.pdf" />
+    <Content Include="Content\upload\bookpdf\book00094.pdf" />
+    <Content Include="Content\upload\bookpdf\book00095.pdf" />
+    <Content Include="Content\upload\bookpdf\book00096.pdf" />
+    <Content Include="Content\upload\bookpdf\book00097.pdf" />
+    <Content Include="Content\upload\bookpdf\book00098.pdf" />
+    <Content Include="Content\upload\bookpdf\book00099.pdf" />
+    <Content Include="Content\upload\bookpdf\book00100.pdf" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Library\KhoSach\DuyetKhoSach.cshtml" />
+    <Content Include="Views\Library\LienHe\Xem.cshtml" />
+    <Content Include="Views\Library\TacGia\Xem.cshtml" />
+    <Content Include="Views\Library\TrangChu\Xem.cshtml" />
+    <Content Include="Views\Shared\Components\Library\sidebar_section.cshtml" />
+    <Content Include="Views\Shared\Components\Library\Header.cshtml" />
+    <Content Include="Views\Shared\Components\Library\SideBarMenu.cshtml" />
+    <Content Include="Views\Shared\Components\Library\Footer.cshtml" />
+    <Content Include="Views\Library\DangKy\NhapThongTin.cshtml" />
+    <Content Include="Views\Shared\LibraryMasterPage.cshtml" />
+    <Content Include="Views\Library\DangNhap\NhapThongTin.cshtml" />
+    <Content Include="Views\Library\QuanLyCaNhan\Xem.cshtml" />
+    <Content Include="Views\Shared\AdminMasterPage.cshtml" />
+    <Content Include="Views\Admin\QuanLyDauSach\Xem.cshtml" />
+    <Content Include="Views\Admin\QuanLyMuonSach\Xem.cshtml" />
+    <Content Include="Views\Admin\QuanLyTacGia\Xem.cshtml" />
+    <Content Include="Views\Admin\ThemMoiDauSach\Xem.cshtml" />
+    <Content Include="Views\Admin\ThemMoiTacGia\Xem.cshtml" />
+    <Content Include="Views\Shared\Components\Admin\Banner.cshtml" />
+    <Content Include="Views\Shared\Components\Admin\Footer.cshtml" />
+    <Content Include="Views\Shared\Components\Admin\Head.cshtml" />
+    <Content Include="Views\Shared\Components\Admin\Menu.cshtml" />
+    <Content Include="Views\Shared\Components\Library\Head.cshtml" />
+    <Content Include="Views\Library\DangKy\NhapLaiThongTin.cshtml" />
+    <Content Include="Views\Library\TimKiem\ThucHienTimKiem.cshtml" />
+    <Content Include="Views\Library\KhoSach\DuyetChuDe.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54123</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54123/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

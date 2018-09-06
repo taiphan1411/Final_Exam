@@ -1,0 +1,64 @@
+﻿@{ 
+    string chuoihienthi = "";
+    if (ViewBag.khoa != null && ViewBag.khoa != "")
+    {
+        chuoihienthi = ViewBag.khoa;
+    }
+    else
+    {
+        chuoihienthi = "Nhập vào từ khóa tìm kiếm...";
+    }
+}
+<div id="templatemo_header">
+    <div id="site_title">
+        <h1>
+            <a href="#">
+                <img src="~/Content/LibraryK29Template/images/templatemo_logo.png" alt="Thư Viện Thông Tin Học - K29 logo" />
+                <span>Quản Trị Thông Tin K29</span>
+            </a>
+        </h1>
+    </div>
+    <div id="logginarea">
+            @if(Session["phanquyen"].ToString() == "me")
+            { 
+                <a href="#"><img src="~/Content/LibraryK29Template/images/cart.png" id="cart">(0 Cuốn sách)</a> 
+                @:|
+            }
+            @if (Session["phanquyen"].ToString() != "u")
+            {
+                <a href="#">@Session["hovaten"]</a>
+                @:| <a href="/DangNhap/ThucHienDangXuat">Đăng Xuất</a>
+                @:|
+            }
+            @if (Session["phanquyen"].ToString() == "u")
+            {
+                <a href="/DangNhap/NhapThongTin">Đăng Nhập</a> 
+                @:| <a href="/DangKy/NhapThongTin">Đăng Ký</a> 
+                @:|
+            }
+            <a href="#">English </a>
+    </div>
+    <div id="templatemo_menu">
+        <ul>
+            <li><a href="/TrangChu">Trang Chủ</a></li>
+            <li><a href="/KhoSach/DuyetKhoSach" @if (ViewBag.pageindex == 2)
+                                                {
+                                                    @:class="current"
+                                                }>Kho Sách</a></li>
+            <li><a href="/TacGia">Tác Giả</a></li>
+            @if(Session["phanquyen"].ToString()=="a" || Session["phanquyen"].ToString() == "ma")
+            {
+                <li><a href="/Admin">Admin</a></li>
+            }
+            <li><a href="/LienHe">Liên Hệ</a></li>
+        </ul>
+    </div> <!-- end of templatemo_menu -->
+
+    <div id="search_box">
+        <form action="/TimKiem/ThucHienTimKiem" method="get">
+            <input type="text" value="@chuoihienthi" name="khoa" size="10" id="khoa" title="Nhập vào từ khóa để tìm kiếm" onfocus="clearText(this)" onblur="clearText(this)" />
+        </form>
+    </div>
+
+    <div class="cleaner"></div>
+</div>

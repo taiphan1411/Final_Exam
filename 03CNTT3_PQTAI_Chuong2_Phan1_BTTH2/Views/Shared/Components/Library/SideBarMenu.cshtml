@@ -1,0 +1,16 @@
+﻿@using _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.DTO;
+@{ 
+    Layout = null;
+    List<ChuDe_DTO> chudes = _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.BUS.ChuDe_BUS.LayDanhSachChuDe();
+}
+<h2>Chủ Đề Sách</h2>
+
+<div class="sidebar_section_content">
+
+    <ul class="categories_list">
+        @foreach (ChuDe_DTO chude in chudes)
+        {
+            <li><a href="/KhoSach/DuyetChuDe?ma=@chude.Machude">@chude.Tenchude</a></li>
+        }
+    </ul>
+</div>

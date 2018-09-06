@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Đăng Ký";
+}
+
+@section ViewCSS{
+<style>
+    .thenhaptext{
+        width: 250px;
+    }
+    #buttondangky {
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: #00BC15;
+        color: #ffffff;
+        border: 1px solid #885788;
+    }
+    #motangan {
+        height:150px;
+        width:450px;
+    }
+</style>   
+}
+
+@section ViewJavaScript{
+<script type="text/javascript" src="~/Content/Library/NiceEditor/nicEdit.js"></script>
+<script>
+    bkLib.onDomLoaded(function () {
+        new nicEditor().panelInstance('motangan');
+    });
+</script>
+<script>
+    function KiemTra(){
+        var matkhau = document.getElementById("txt_matkhau");
+        var giatrimatkhau = matkhau.value;
+        var nhaplaimatkhau = document.getElementById("txt_nhaplaimatkhau");
+        var giatrinhaplaimatkhau = nhaplaimatkhau.value;
+
+        if (giatrimatkhau == giatrinhaplaimatkhau)
+        {
+            return true;
+        }
+        else {
+            alert("Mật khẩu nhập lại không trùng khớp. Vui lòng nhập lại!");
+            return false;
+        }
+    }
+</script>
+}
+
+<h2>Đăng Ký</h2>
+<form method="post" id="formdangky" action="/DangKy/ThucHienDangKy" enctype="multipart/form-data">
+
+    <label class="labelnhaplieu" for="tendangnhap">Tên đăng nhập(*)</label><br/>
+    <input type="text" id="tendangnhap" name="tendangnhap" required class="thenhaptext"><br />
+
+    <label class="labelnhaplieu" for="matkhau">Mật khẩu(*)</label><br />
+    <input type="password" id="matkhau" name="matkhau"required class="thenhaptext"><br />
+
+    <label class="labelnhaplieu" for="nhaplaimatkhau">Nhập lại mật khẩu(*)</label><br />
+    <input type="password" id="nhaplaimatkhau" name="nhaplaimatkhau" required class="thenhaptext"><br />
+
+    <label class="labelnhaplieu" for="hovaten">Họ và tên(*)</label><br />
+    <input type="text" id="hovaten" name="hovaten" required class="thenhaptext"><br />
+
+    <label class="labelnhaplieu" for="diachi">Địa chỉ</label><br />
+    <input type="text" id="diachi" name="diachi" class="thenhaptext"><br />
+
+    <label class="labelnhaplieu" for="email">Email</label><br />
+    <input type="email" id="email" name="email" class="thenhaptext"><br />
+
+    <label class="labelnhaplieu" for="sodienthoai">Số điện thoại</label><br />
+    <input type="tel" id="sodienthoai" name="sodienthoai" class="thenhaptext"><br />
+
+    <label class="labelnhaplieu" for="gioitinh">Giới Tính</label><br />
+    Nam<input type="radio" name="gioitinh" value="T" checked/>
+    Nữ<input type="radio" name="gioitinh" value="G" />
+    Bê Đê<input type="radio" name="gioitinh" value="B" /><br />
+
+    <label class="labelnhaplieu" for="ngaysinh">Ngày sinh</label><br />
+    <input style="width: 248px !important;" type="datetime" id="ngaysinh" name="ngaysinh" class="thenhaptext" placeholder="mm/dd/yyyy"><br />
+
+    <label class="labelnhaplieu" for="anhdaidien">Ảnh đại diện</label><br />
+    <input type="file" id="anhdaidien" name="anhdaidien" class="thenhaptext"><br />
+
+    <label class="labelnhaplieu" for="motangan">Mô tả ngắn</label><br />
+    <textarea id="motangan" name="motangan" class="thenhaptext"></textarea><br />
+
+    <input id="buttondangky" class="buttonsubmit" onclick="return KiemTra();" type="submit" value="Đăng Ký">
+
+</form>

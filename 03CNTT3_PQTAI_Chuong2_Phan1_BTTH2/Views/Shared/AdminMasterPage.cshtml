@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("~/Views/Shared/Components/Admin/Head.cshtml")
+</head>
+
+@RenderSection("ViewCSS", false);
+@RenderSection("ViewJavaScript", false);
+
+<body>
+    <div id="wrapper">
+        @Html.Partial("~/Views/Shared/Components/Admin/Banner.cshtml")
+        <div id="containerHolder">
+            <div id="container">
+                @Html.Partial("~/Views/Shared/Components/Admin/Menu.cshtml")
+                @RenderBody()
+                <div class="clear"></div>
+            </div>
+        </div>
+        @Html.Partial("~/Views/Shared/Components/Admin/Footer.cshtml")
+    </div>
+</body>
+</html>
+

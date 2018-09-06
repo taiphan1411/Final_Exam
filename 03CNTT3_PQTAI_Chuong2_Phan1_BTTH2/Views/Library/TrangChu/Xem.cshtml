@@ -1,0 +1,33 @@
+﻿
+@using _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.DTO;
+@{
+    ViewBag.Title = "Trang Chủ";
+
+    List<Sach_DTO> sachs = ViewBag.hanh;
+}
+
+@section sidebar_section
+{
+    @Html.Partial("~/Views/Shared/Components/Library/sidebar_section.cshtml");
+}
+
+<div class="content_section">
+
+    <h2>Sách Mới</h2>
+    @foreach(Sach_DTO sach in sachs)
+    {
+        <div class="product_box margin_r10">
+            <h3>@sach.Tensach</h3>
+            <img src="~/Content/bookimages/@sach.Anh" alt="product" />
+            <p class="author">Tác giả: @sach.Tacgia</p>
+            <a href="#">Xem</a> | <a href="#">Thêm vào giỏ sách</a>
+        </div>
+    }
+    <div class="cleaner"></div>
+
+    <div class="button_01"><a href="#">Xem Tất Cả</a></div>
+
+</div>
+
+<div class="cleaner_h40"></div>
+

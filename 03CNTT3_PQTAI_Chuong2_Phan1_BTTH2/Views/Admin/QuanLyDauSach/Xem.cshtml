@@ -1,0 +1,39 @@
+﻿@using _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.DTO;
+@{
+    ViewBag.Title = "Quản Lý Đầu Sách";
+    Layout = "~/Views/Shared/AdminMasterPage.cshtml";
+    List<Sach_DTO> sachs = ViewBag.sachs;
+}
+
+@section ViewCSS
+{
+<style>
+    #main table tr td{
+        vertical-align:middle;
+    }
+</style>
+    
+}
+
+<h2><a href="#">@ViewBag.Title</a></h2>
+
+<div id="main">
+    <h3>Tìm Thấy 0 Cuốn Sách</h3>
+    <table cellpadding="0" cellspacing="0">
+        @for (int i = 0; i < sachs.Count; i++)
+        {
+            <tr @if (i % 2 == 0)
+                { 
+                    @:class="old"
+                }
+            > 
+                    <td><img width="40px" height="50px" alt="" src="/Content/Upload/bookimages/@sachs[i].Anh" /></td>   
+                    <td>@sachs[i].Tensach</td>    
+                    <td>@sachs[i].Tacgia</td>
+                    <td>@sachs[i].Ngaydang.ToShortDateString()</td>    
+                    <td class="action"><a href="#" class="view">View</a><a href="#" class="edit">Edit</a><a href="#" class="delete">Delete</a></td>
+            </tr>
+        }
+    </table>
+</div>
+

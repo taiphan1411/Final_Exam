@@ -1,0 +1,50 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("~/Views/Shared/Components/Library/Head.cshtml")
+</head>
+@RenderSection("ViewCSS", false)
+@RenderSection("ViewJavaScript", false)
+<body>
+    <div id="templatemo_header_wrapper">
+
+        @Html.Partial("~/Views/Shared/Components/Library/Header.cshtml")
+
+    </div>
+
+    <div id="templatemo_content_wrapper">
+
+        <div id="templatemo_content">
+
+            @RenderBody()
+
+        </div>
+
+        <div id="templatmeo_sidebar">
+
+            <div class="sidebar_section">
+
+                @Html.Partial("~/Views/Shared/Components/Library/SideBarMenu.cshtml")
+
+            </div>
+
+            <div class="cleaner_h30"></div>
+            <div class="sidebar_section">
+
+                @RenderSection("sidebar_section", false)
+
+            </div>
+
+        </div> <!-- end of sidebar -->
+
+        <div class="cleaner"></div>
+
+    </div>
+    <div id="templatemo_content_wrapper_bottom">
+    </div> <!-- end of content_wrapper -->
+
+    @Html.Partial("~/Views/Shared/Components/Library/Footer.cshtml")
+
+</body>
+</html>

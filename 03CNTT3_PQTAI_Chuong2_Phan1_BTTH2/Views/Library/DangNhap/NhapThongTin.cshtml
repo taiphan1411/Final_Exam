@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Đăng Nhập";
+}
+
+@section ViewCSS{
+<style>
+    .thenhaptext {
+        width: 250px;
+    }
+
+    #buttondangnhap {
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: #00BC15;
+        color: #ffffff;
+        border: 1px solid #885788;
+    }
+</style>   
+}
+
+
+<h2>Đăng Nhập</h2>
+
+@if(ViewBag.errormessage != null)
+{
+    <p style="color:red;">@ViewBag.errormessage</p>
+}
+
+<form method="post" id="formdangnhap" action="/DangNhap/ThucHienDangNhap">
+    <table width="420" border="0">
+        <tbody>
+            <tr>
+                <td>
+                    <label class="labelnhaplieu">Tên đăng nhập</label>
+                </td>
+                <td>
+                    <input type="text" id="tendangnhap" name="tendangnhap" required class="thenhaptext">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="labelnhaplieu">Mật khẩu</label>
+                </td>
+                <td>
+                    <input type="password" id="matkhau" name="matkhau" required class="thenhaptext">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="checkbox" id="check_ghinho" name="check_ghinho" value="true"/>Ghi nhớ đăng nhập?</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input class="buttonsubmit" id="buttondangnhap" type="submit" value="Đăng Nhập">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>

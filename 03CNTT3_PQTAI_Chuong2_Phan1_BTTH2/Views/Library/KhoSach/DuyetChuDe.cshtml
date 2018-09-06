@@ -1,0 +1,186 @@
+﻿@using _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.DTO;
+@{
+    ViewBag.Title = "Kho Sách";
+    ViewBag.pageindex = 2;
+}
+
+@{
+    List<DauSachFull_DTO> dausachs = ViewBag.dausachs;
+    int sotrang = ViewBag.sotrang;
+    int tranghientai = ViewBag.tranghientai;
+    string cotsapxep = ViewBag.cotsapxep;
+    List<DauSach_DTO> sachs = ViewBag.sachs;
+    string machude = ViewBag.machude;
+    ChuDe_DTO chude = ViewBag.chude;
+}
+
+@section ViewCSS{
+<style>
+    @@keyframes top10{
+        0% {-webkit-transform: rotateY(0deg); transform:rotateY(0deg)}
+        100% {-webkit-transform: rotateY(360deg); transform:rotateY(360deg)}
+    }
+    #bookscount{
+    float: left;
+    }
+    #bookssort{
+        float: right;
+    }
+    #bookssort #listsort{
+        width: 100px;
+    }
+    .clear-format{
+        clear: both;
+        font-size: 0px;
+        padding: 0px;
+        margin: 0px;
+        height: 0px;
+    }
+    .product_box img{
+        height: 210px;
+    }
+    #pageindex, #pageindex a{
+        font-weight:bold;
+        font-size: 20px;
+    }
+    #pageindex a:hover{
+        color:green;
+        cursor:pointer;
+    }
+    .product_box h3{
+        white-space: nowrap;
+        width: 170px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor:pointer;
+    }
+    img.imgtop10{
+        float:left;
+        width:100px;
+        height:120px;
+        margin:10px;
+        border-radius:10px;
+    }
+    img.imgtop10:hover{
+        border: 2px solid green;
+        width:96px;
+        height:116px;
+        animation-name:top10;
+        animation-duration:3s;
+        animation-iteration-count:infinite;
+    }
+</style>
+}
+
+@section ViewJavaScript{
+<script>
+    function DuyetTheoThuTu() {
+        var thelistsort = document.getElementById("listsort");
+        var giatriduocchon = thelistsort.value;
+        var url = "/KhoSach/DuyetChuDe?ma=@machude&&sapxep=" + giatriduocchon;
+        window.location = url;
+    }
+</script>
+}
+
+
+@section sidebar_section
+{
+    <h2>Top 10 Đầu Sách</h2>
+    <div>
+        @foreach(DauSach_DTO sach in sachs)
+        { 
+            <img alt="@sach.Tensach" title="@sach.Tensach" class="imgtop10" src="~/Content/upload/bookimage/thumbnail/@sach.Bia"/>
+        }
+        <div class="cleaner"></div>
+    </div>
+}
+
+<h2>Duyệt Theo Chủ Đề: @chude.Tenchude</h2>
+<div>
+    <div id="bookscount">Số lượng sách: @ViewBag.soluongsach</div>
+    <div id="bookssort">
+        Sắp xếp
+        <select id="listsort" name="sorttype" onchange="DuyetTheoThuTu()">
+            <option value="tensach" @if (cotsapxep == "tensach")
+                                    {
+                                        @:selected
+                                    }>Tên Sách</option>
+            <option value="matacgia" @if (cotsapxep == "matacgia")
+                                    {
+                                        @:selected
+                                    }>Tác Giả</option>
+            <option value="manhaxuatban" @if (cotsapxep == "manhaxuatban")
+                                        {
+                                            @:selected
+                                        }>Nhà Xuất Bản</option>
+            <option value="machude" @if (cotsapxep == "machude")
+                                    {
+                                        @:selected
+                                    }>Chủ Đề</option>
+            <option value="ngaydang" @if (cotsapxep == "ngaydang")
+                                    {
+                                        @:selected
+                                    }>Ngày Đăng</option>
+        </select>
+    </div>
+    <br class="clear-format">
+</div>
+<br />
+<div id="books">
+    @foreach(DauSachFull_DTO dausach in dausachs)
+    { 
+        <div class="product_box margin_r10">
+            <h3 title="@dausach.Tensach">@dausach.Tensach</h3>
+            <img src="~/Content/upload/bookimage/thumbnail/@dausach.Bia" alt="product" />
+            <p class="author">Tác giả: @dausach.Tentacgia</p>
+            <a href="#">Xem</a> | <a href="#">Thêm vào giỏ sách</a>
+        </div>
+    }
+    <div class="cleaner"></div>
+</div>
+<div id="pageindex">
+    @if(tranghientai > 1)
+    {
+        <a href="/KhoSach/DuyetKhoSach?sapxep=@cotsapxep&trang=1">1</a>@:&nbsp;&nbsp;&nbsp;&nbsp;
+    }
+    @if (tranghientai - 1 > 4)
+    {
+        @:&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;
+    }
+    @if (tranghientai - 1 > 3)
+    {
+        <a href="/KhoSach/DuyetChuDe?ma=@machude&sapxep=@cotsapxep&trang=@(tranghientai - 3)">@(tranghientai - 3)</a>@:&nbsp;&nbsp;&nbsp;&nbsp;
+    }
+    @if (tranghientai - 1 > 2)
+    {
+        <a href="/KhoSach/DuyetChuDe?ma=@machude&sapxep=@cotsapxep&trang=@(tranghientai - 2)">@(tranghientai - 2)</a>@:&nbsp;&nbsp;&nbsp;&nbsp;
+    }
+    @if (tranghientai - 1 > 1)
+    {
+        <a href="/KhoSach/DuyetChuDe?ma=@machude&sapxep=@cotsapxep&trang=@(tranghientai - 1)">@(tranghientai - 1)</a>@:&nbsp;&nbsp;&nbsp;&nbsp;
+    }
+
+    @tranghientai&nbsp;&nbsp;&nbsp;&nbsp;
+
+    @if (sotrang - tranghientai > 1)
+    {
+        <a href="/KhoSach/DuyetChuDe?ma=@machude&sapxep=@cotsapxep&trang=@(tranghientai + 1)">@(tranghientai + 1)</a>@:&nbsp;&nbsp;&nbsp;&nbsp;
+    }
+    @if (sotrang - tranghientai > 2)
+    {
+        <a href="/KhoSach/DuyetChuDe?ma=@machude&sapxep=@cotsapxep&trang=@(tranghientai + 2)">@(tranghientai + 2)</a>@:&nbsp;&nbsp;&nbsp;&nbsp;
+    }
+    @if (sotrang - tranghientai > 3)
+    {
+        <a href="/KhoSach/DuyetChuDe?ma=@machude&sapxep=@cotsapxep&trang=@(tranghientai + 3)">@(tranghientai + 3)</a>@:&nbsp;&nbsp;&nbsp;&nbsp;
+    }
+    @if (sotrang - tranghientai > 4)
+    {
+        @:&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;
+    }
+    @if (tranghientai < sotrang)
+    {
+        <a href="/KhoSach/DuyetChuDe?ma=@machude&sapxep=@cotsapxep&trang=@sotrang">@sotrang</a>
+    }
+</div>
