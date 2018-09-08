@@ -12,8 +12,6 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Controllers.Library
     {
         public ActionResult Xem()
         {
-            List<Sach_DTO> sachs = Sach_BUS.LayDanhSachCacDauSach();
-            ViewBag.hanh = sachs;
             return View("~/Views/Library/TrangChu/Xem.cshtml");
         }
     }

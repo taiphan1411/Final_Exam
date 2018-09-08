@@ -1,4 +1,5 @@
-﻿@{ 
+﻿@using _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.DTO;
+@{ 
     string chuoihienthi = "";
     if (ViewBag.khoa != null && ViewBag.khoa != "")
     {
@@ -7,6 +8,14 @@
     else
     {
         chuoihienthi = "Nhập vào từ khóa tìm kiếm...";
+    }
+    int soluongcuonsachtronggiosach = 0;
+    if (Session["items"] != null)
+    {
+        foreach(Item_DTO item in (List<Item_DTO>)Session["items"])
+        {
+            soluongcuonsachtronggiosach = soluongcuonsachtronggiosach + item.Soluong;
+        }
     }
 }
 <div id="templatemo_header">
@@ -19,9 +28,9 @@
         </h1>
     </div>
     <div id="logginarea">
-            @if(Session["phanquyen"].ToString() == "me")
-            { 
-                <a href="#"><img src="~/Content/LibraryK29Template/images/cart.png" id="cart">(0 Cuốn sách)</a> 
+            @if (Session["phanquyen"].ToString() == "me")
+            {
+                <a href="/GioSach/XemChiTiet"><img src="~/Content/LibraryK29Template/images/cart.png" id="cart">(@soluongcuonsachtronggiosach Cuốn sách)</a> 
                 @:|
             }
             @if (Session["phanquyen"].ToString() != "u")
@@ -40,17 +49,17 @@
     </div>
     <div id="templatemo_menu">
         <ul>
-            <li><a href="/TrangChu">Trang Chủ</a></li>
+            <li><a href="/TrangChu/Xem">Trang Chủ</a></li>
             <li><a href="/KhoSach/DuyetKhoSach" @if (ViewBag.pageindex == 2)
                                                 {
                                                     @:class="current"
                                                 }>Kho Sách</a></li>
-            <li><a href="/TacGia">Tác Giả</a></li>
+            <li><a href="/TacGia/Xem">Tác Giả</a></li>
             @if(Session["phanquyen"].ToString()=="a" || Session["phanquyen"].ToString() == "ma")
             {
-                <li><a href="/Admin">Admin</a></li>
+                <li><a href="/Admin/Xem">Admin</a></li>
             }
-            <li><a href="/LienHe">Liên Hệ</a></li>
+            <li><a href="/LienHe/Xem">Liên Hệ</a></li>
         </ul>
     </div> <!-- end of templatemo_menu -->
 

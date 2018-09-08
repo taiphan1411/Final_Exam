@@ -156,6 +156,7 @@
     <Compile Include="Controllers\Library\AdminController.cs" />
     <Compile Include="Controllers\Library\DangKyController.cs" />
     <Compile Include="Controllers\Library\DangNhapController.cs" />
+    <Compile Include="Controllers\Library\GioSachController.cs" />
     <Compile Include="Controllers\Library\KhoSachController.cs" />
     <Compile Include="Controllers\Library\LienHeController.cs" />
     <Compile Include="Controllers\Library\QuanLyCaNhanController.cs" />
@@ -167,20 +168,25 @@
     </Compile>
     <Compile Include="Models\BUS\ChuDe_BUS.cs" />
     <Compile Include="Models\BUS\DauSach_BUS.cs" />
+    <Compile Include="Models\BUS\DonDatSach_BUS.cs" />
     <Compile Include="Models\BUS\MaHoaThongTin_BUS.cs" />
     <Compile Include="Models\BUS\NguoiDung_BUS.cs" />
-    <Compile Include="Models\BUS\Sach_BUS.cs" />
+    <Compile Include="Models\BUS\ThamSo_BUS.cs" />
     <Compile Include="Models\BUS\XuLyAnh.cs" />
+    <Compile Include="Models\DAO\ChiTietDonMuonSach_DAO.cs" />
     <Compile Include="Models\DAO\ChuDe_DAO.cs" />
     <Compile Include="Models\DAO\DauSach_DAO.cs" />
+    <Compile Include="Models\DAO\DonDatSach_DAO.cs" />
     <Compile Include="Models\DAO\NguoiDung_DAO.cs" />
-    <Compile Include="Models\DAO\Sach_DAO.cs" />
     <Compile Include="Models\DAO\SQLDataAccess.cs" />
+    <Compile Include="Models\DAO\ThamSo_DAO.cs" />
+    <Compile Include="Models\DTO\ChiTietDonMuonSach_DTO.cs" />
     <Compile Include="Models\DTO\ChuDe_DTO.cs" />
     <Compile Include="Models\DTO\DauSachFull_DTO.cs" />
     <Compile Include="Models\DTO\DauSach_DTO.cs" />
+    <Compile Include="Models\DTO\DonDatSach_DTO.cs" />
+    <Compile Include="Models\DTO\Item_DTO.cs" />
     <Compile Include="Models\DTO\NguoiDung_DTO.cs" />
-    <Compile Include="Models\DTO\Sach_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -625,6 +631,8 @@
     <Content Include="Views\Library\DangKy\NhapLaiThongTin.cshtml" />
     <Content Include="Views\Library\TimKiem\ThucHienTimKiem.cshtml" />
     <Content Include="Views\Library\KhoSach\DuyetChuDe.cshtml" />
+    <Content Include="Views\Library\GioSach\XemChiTiet.cshtml" />
+    <Content Include="Views\Library\GioSach\SuaThongTin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

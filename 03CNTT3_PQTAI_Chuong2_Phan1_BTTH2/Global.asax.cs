@@ -28,16 +28,16 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2
             Session.Add("hovaten","");
             Session.Add("phanquyen","u");
             Session.Add("anhdaidien","");
-            /*
+
             if (Request.Cookies["tendangnhap"] != null && Request.Cookies["matkhau"] != null)
             {
                 string tendangnhap = Request.Cookies["tendangnhap"].Value;
                 string matkhau = Request.Cookies["matkhau"].Value;
 
                 NguoiDung_DTO nguoidung = NguoiDung_BUS.LayThongTinNguoiDungBoiUsernameVaPassword(tendangnhap, matkhau);
-
                 if (nguoidung != null)
                 {
+                    Session["manguoidung"] = nguoidung.Manguoidung;
                     Session["hovaten"] = nguoidung.Hovaten;
                     Session["phanquyen"] = nguoidung.Phanquyen;
                     Session["anhdaidien"] = nguoidung.Anhdaidien;
@@ -45,10 +45,11 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2
             }
             else
             {
+                Session["manguoidung"] = "";
                 Session["hovaten"] = "";
                 Session["phanquyen"] = "u";
                 Session["anhdaidien"] = "";
-            }*/
+            }
         }
         protected void Session_End()
         {
@@ -56,8 +57,8 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2
         }
         protected void Application_BeginRequest()
         {
-
         }
+        
         protected void Application_EndRequest()
         {
 

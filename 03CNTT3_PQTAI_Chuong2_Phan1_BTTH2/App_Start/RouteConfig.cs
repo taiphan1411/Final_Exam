@@ -20,7 +20,7 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "TrangChu", action = "Xem", id = UrlParameter.Optional }
+                defaults: new { controller = "KhoSach", action = "DuyetKhoSach", id = UrlParameter.Optional }
             );
         }
     }

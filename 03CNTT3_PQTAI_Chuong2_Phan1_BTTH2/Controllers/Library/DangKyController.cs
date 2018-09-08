@@ -15,7 +15,7 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Controllers.Library
         // GET: DangKy
         public ActionResult NhapThongTin()
         {
-            if(Session["phanquyen"] != "u")
+            if(Session["phanquyen"].ToString() != "u")
             {
                 return Redirect("/TrangChu/Xem");
             }
@@ -25,7 +25,7 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Controllers.Library
         [ValidateInput(false)]
         public ActionResult ThucHienDangKy()
         {
-            if (Session["phanquyen"] != "u")
+            if (Session["phanquyen"].ToString() != "u")
             {
                 return Redirect("/TrangChu/Xem");
             }
@@ -60,7 +60,7 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Controllers.Library
                     anhminisize.Save(System.AppDomain.CurrentDomain.BaseDirectory + "/Content/upload/avatar/thumbnail/" + tenanhphailuu);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ViewBag.message = "Có lỗi khi nhập thông tin đăng ký, bạn vui lòng nhập lại";
                 ViewBag.nguoidung = nguoidung;

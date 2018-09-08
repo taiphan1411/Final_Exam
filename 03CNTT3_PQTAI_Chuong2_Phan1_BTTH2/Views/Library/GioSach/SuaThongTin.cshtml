@@ -1,0 +1,42 @@
+﻿@using _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.DTO;
+@{
+    ViewBag.Title = "Sửa thông tin";
+    Item_DTO item = ViewBag.item;
+}
+
+@section ViewCSS{
+    <style>
+        #imgbook{
+            width:250px;
+            height:300px;
+            border-radius:5px;
+            margin-left: 130px;
+        }
+        #buttoncapnhat {
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: #00BC15;
+        color: #ffffff;
+        border: 1px solid #885788;
+        text-align:center;
+        }
+    </style>
+}
+
+@section ViewJavaScript{
+    <script>
+
+    </script>
+}
+
+<h2>Sửa Thông Tin Sách Mượn</h2>
+<img id="imgbook" src="~/Content/upload/bookimage/@item.Bia" />
+
+<p>Nhập số lượng sách "@item.Tensach" muốn mượn</p>
+
+<form action="/GioSach/ThucHienCapNhat" method="post">
+    <input type="number" min="1" name="soluong" id="soluong" value="@item.Soluong"/>
+    <input type="hidden" name="madausach" id="madausach" value="@item.Madausach" />
+    <input id="buttoncapnhat" type="submit" value="Cập nhật">
+</form>

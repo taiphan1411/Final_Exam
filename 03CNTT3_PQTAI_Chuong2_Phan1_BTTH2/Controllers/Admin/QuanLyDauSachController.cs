@@ -15,11 +15,8 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Controllers.Admin
         {
             if (Session["phanquyen"].ToString() == "u" || Session["phanquyen"].ToString() == "me")
             {
-                return Redirect("/TrangChu/Xem");
+                return Redirect("/KhoSach/DuyetKhoSach");
             }
-            List<Sach_DTO> sachs = Sach_BUS.LayDanhSachCacDauSach();
-            ViewBag.sachs = sachs;
-
             return View("~/Views/Admin/QuanLyDauSach/Xem.cshtml");
         }
     }

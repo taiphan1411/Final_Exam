@@ -11,7 +11,7 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Controllers.Library
         // GET: QuanLyCaNhan
         public ActionResult Xem()
         {
-            if (Session["phanquyen"] != "a" && Session["phanquyen"] != "u")
+            if (Session["phanquyen"].ToString() != "a" && Session["phanquyen"].ToString() != "u")
             {
                 return Redirect("/TrangChu/Xem");
             }

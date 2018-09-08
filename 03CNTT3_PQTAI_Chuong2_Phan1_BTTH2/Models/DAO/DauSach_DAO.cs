@@ -159,5 +159,20 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.DAO
             }
             return dausachs;
         }
+        public static DauSach_DTO LayThongTinChiTietCuaDauSachBoiMa(string madausach)
+        {
+            List<SqlParameter> paras = new List<SqlParameter>();
+            paras.Add(new SqlParameter("@madausach", madausach));
+            DataTable ketqua = SQLDataAccess.ThucThiSPTraVeKetQua("sp_LayThongTinChiTietCuaDauSachBoiMa", paras);
+            if (ketqua.Rows.Count > 0)
+            {
+                DauSach_DTO dausach = new DauSach_DTO();
+                dausach.Bia = ketqua.Rows[0]["bia"].ToString();
+                dausach.Madausach = ketqua.Rows[0]["madausach"].ToString();
+                dausach.Tensach = ketqua.Rows[0]["tensach"].ToString();
+                return dausach;
+            }
+            return null;
+        }
     }
 }

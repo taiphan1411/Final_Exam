@@ -40,5 +40,9 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.BUS
         {
             return DAO.DauSach_DAO.TimKiemSachVaPhanTrang(khoa, sosachtrongmottrang, tranghientai, cotsapxep);
         }
+        public static DauSach_DTO LayThongTinChiTietCuaDauSachBoiMa(string madausach)
+        {
+            return DAO.DauSach_DAO.LayThongTinChiTietCuaDauSachBoiMa(madausach);
+        }
     }
 }

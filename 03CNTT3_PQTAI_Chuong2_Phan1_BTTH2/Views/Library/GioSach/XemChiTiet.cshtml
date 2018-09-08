@@ -1,0 +1,66 @@
+﻿@using _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.DTO;
+@{
+    ViewBag.Title = "Chi Tiết Giỏ Sách";
+    List<Item_DTO> items = (List<Item_DTO>)Session["items"];
+}
+
+@section ViewCSS{
+    <style>
+        .dongchan{
+            background-color:#D8F9C8;
+        }
+        #buttondangky {
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: #00BC15;
+        color: #ffffff;
+        border: 1px solid #885788;
+        text-align:center;
+        }
+        #errormessage{
+            color:red;
+        }
+    </style>
+}
+
+@section ViewJavaScript{
+    <script>
+
+    </script>
+}
+
+<h2>Chi Tiết Giỏ Sách</h2>
+@if (ViewBag.errormessage != null && ViewBag.errormessage != "")
+{
+    <p id="errormessage">@ViewBag.errormessage</p>
+}
+
+<table width="563" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td withd="38">STT</td>
+            <td withd="50">Ảnh&nbsp;</td>
+            <td withd="276">Tên&nbsp;Sách</td>
+            <td withd="61">Số&nbsp;Lượng</td>
+            <td withd="33">Xem&nbsp;</td>
+            <td withd="29">Sửa&nbsp;</td>
+            <td withd="30">Xóa&nbsp;</td>
+        </tr>
+        @for (int i = 0; i < items.Count; i++)
+        {
+            <tr @if (i % 2 == 0) {
+                @:class="dongchan"
+            }>
+                <td height="23">@(i+1)</td>
+                <td><img src="~/Content/upload/bookimage/thumbnail/@items[i].Bia" height="60" width="50"></td>
+                <td>@items[i].Tensach</td>
+                <td>@items[i].Soluong</td>
+                <td><a href="/GioSach/XemChiTiet?madausach=@items[i].Madausach">xem</a></td>
+                <td><a href="/GioSach/SuaThongTin?madausach=@items[i].Madausach">sửa</a></td>
+                <td><a href="/GioSach/XoaDauSachMuon?madausach=@items[i].Madausach">xóa</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/GioSach/DatMuonSach"><input id="buttondangky" class="buttonsubmit" type="button" value="Đăng Ký Mượn Sách"></a>

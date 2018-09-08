@@ -517,6 +517,49 @@ begin
 end
 go
 
+/*Chi tiết đầu sách*/
+create procedure sp_LayThongTinChiTietCuaDauSachBoiMa
+@madausach nvarchar(50)
+as
+begin
+	select * from DauSach ds, TacGia tg, NhaXuatBan nxb, ChuDe cd
+	where ds.madausach = @madausach and ds.matacgia = tg.matacgia and ds.manhaxuatban = nxb.manhaxuatban and ds.machude = cd.machude
+end
+go
+
+/*Số lượng sách tối đa có thể mượn*/
+create procedure sp_SoLuongSachToiDaCoTheMuon
+as
+begin
+	select giatridulieu from ThamSo where tendulieu = N'soluongsachmuontoida'
+end
+go
+
+/*Them đơn đặt sách*/
+create procedure sp_ThemMotDonDatSach
+@madonmuonsach nvarchar(50) output,
+@manguoidung nvarchar(50),
+@ngaydat datetime
+as
+begin
+	set @madonmuonsach = NEWID()
+	insert into DonMuonSach(madonmuonsach,manguoidung,ngaydat,matrangthai)
+	values (@madonmuonsach,@manguoidung,@ngaydat,N'1')
+end
+go
+
+/*Thêm chi tiết đơn đặt sách*/
+create procedure sp_ThemMotChiTietDonDatSach
+@madonmuonsach nvarchar(50),
+@madausach nvarchar(50),
+@soluong int
+as
+begin
+	insert into ChiTietDonMuonSach(machitietdonmuonsach,madonmuonsach,madausach,soluong)
+	values (NEWID(),@madonmuonsach,@madausach,@soluong)
+end
+go
+
 /*Thêm mới người dùng*/
 create procedure sp_ThemNguoiDungMoi
 @tendangnhap		nvarchar(100),

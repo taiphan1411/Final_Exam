@@ -6,6 +6,7 @@ using System.Web;
 using System.Data.SqlClient;
 using System.Data;
 using Web2_Chuong1_Phan1_Demo8.Models.DAO;
+using _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.BUS;
 
 namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.DAO
 {
@@ -42,6 +43,7 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.DAO
             List<SqlParameter> paras = new List<SqlParameter>();
             paras.Add(new SqlParameter("@tendangnhap", tendangnhap));
             paras.Add(new SqlParameter("@matkhau", matkhau));
+
             DataTable ketqua = SQLDataAccess.ThucThiSPTraVeKetQua("sp_LayThongTinNguoiDungBoiUsernameVaPassword", paras);
             if (ketqua.Rows.Count > 0)
             {
@@ -87,11 +89,6 @@ namespace _03CNTT3_PQTAI_Chuong2_Phan1_BTTH2.Models.DAO
             {
                 return null;
             }
-
-
-
-
-            return null;
         }
     }
 }
